@@ -1,4 +1,6 @@
-# puts "EventManager Initialized!"
+# http://tutorials.jumpstartlab.com/projects/eventmanager.html
+
+puts "EventManager Initialized!"
 
 =begin
 contents = File.read "event_attendees.csv"
@@ -25,8 +27,7 @@ lines.each do |line|
 end
 =end
 
-
-
+=begin
 lines = File.readlines "event_attendees.csv"
 row_index = 0
 lines.each do |line|
@@ -36,7 +37,17 @@ lines.each do |line|
   name = columns[2]
   puts name
 end
+=end
 
+
+
+lines = File.readlines "event_attendees.csv"
+lines.each_with_index do |line,index|
+  next if index == 0
+  columns = line.split(",")
+  name = columns[2]
+  puts name
+end
 
 
 
